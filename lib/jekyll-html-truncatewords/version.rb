@@ -1,7 +1,5 @@
 module Jekyll
-  module Html
-    module Truncatewords
-      VERSION = "0.1.0"
-    end
+  module HtmlTruncatewords
+    VERSION = "0.1.0"
   end
 end

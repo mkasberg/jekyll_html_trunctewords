@@ -1,5 +1,5 @@
 require "bundler/setup"
-require "jekyll/html/truncatewords"
+require "jekyll-html-truncatewords"
 
 RSpec.configure do |config|
   # Enable flags like --only-failures and --next-failure

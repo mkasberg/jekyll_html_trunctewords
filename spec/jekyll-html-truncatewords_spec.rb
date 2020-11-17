@@ -1,6 +1,6 @@
-RSpec.describe Jekyll::Html::Truncatewords do
+RSpec.describe Jekyll::HtmlTruncatewords do
   it "has a version number" do
-    expect(Jekyll::Html::Truncatewords::VERSION).not_to be nil
+    expect(Jekyll::HtmlTruncatewords::VERSION).not_to be nil
   end
 
   it "does something useful" do
