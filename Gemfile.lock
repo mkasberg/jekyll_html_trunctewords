@@ -2,11 +2,16 @@ PATH
   remote: .
   specs:
     jekyll-html-truncatewords (0.1.0)
+      liquid
+      liquid-c
 
 GEM
   remote: https://rubygems.org/
   specs:
     diff-lcs (1.4.4)
+    liquid (4.0.3)
+    liquid-c (4.0.0)
+      liquid (>= 3.0.0)
     rake (12.3.3)
     rspec (3.10.0)
       rspec-core (~> 3.10.0)

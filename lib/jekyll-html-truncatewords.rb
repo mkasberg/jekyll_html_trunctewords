@@ -1,16 +1,18 @@
-require 'jekyll-html-truncatewords/core'
 require 'jekyll-html-truncatewords/version'
-
-if defined?(Jekyll) && defined?(Liquid)
-  require 'jekyll-html-truncatewords/jekyll_integration'
-end
+require 'liquid'
 
 module Jekyll
   module HtmlTruncatewords
+    extend Liquid::StandardFilters
+    
     extend self
 
-    def html_truncatewords(html, limit)
-      Core.html_truncatewords(html, limit)
+    # Truncate HTML input to have `limit` words when rendered as HTML.
+    # Preserve HTML structure so tags are correctly matched.
+    def html_truncatewords(input, words = 15, truncate_string = "...")
+      truncatewords(input, words, truncate_string)
     end
   end
 end
+
+Liquid::Template.register_filter(Jekyll::HtmlTruncatewords)

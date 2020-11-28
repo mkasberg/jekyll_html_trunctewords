@@ -1,4 +1,5 @@
 require "bundler/setup"
+require "liquid"
 require "jekyll-html-truncatewords"
 
 RSpec.configure do |config|
