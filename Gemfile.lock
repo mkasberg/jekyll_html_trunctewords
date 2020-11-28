@@ -4,6 +4,7 @@ PATH
     jekyll-html-truncatewords (0.1.0)
       liquid
       liquid-c
+      nokogiri
 
 GEM
   remote: https://rubygems.org/
@@ -12,6 +13,9 @@ GEM
     liquid (4.0.3)
     liquid-c (4.0.0)
       liquid (>= 3.0.0)
+    mini_portile2 (2.4.0)
+    nokogiri (1.10.10)
+      mini_portile2 (~> 2.4.0)
     rake (12.3.3)
     rspec (3.10.0)
       rspec-core (~> 3.10.0)
