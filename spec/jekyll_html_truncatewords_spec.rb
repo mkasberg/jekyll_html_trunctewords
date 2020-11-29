@@ -1,8 +1,8 @@
 require 'spec_helper'
 
-RSpec.describe Jekyll::HtmlTruncatewords do
+RSpec.describe JekyllHtmlTruncatewords do
   it "has a version number" do
-    expect(Jekyll::HtmlTruncatewords::VERSION).not_to be nil
+    expect(JekyllHtmlTruncatewords::VERSION).not_to be nil
   end
 
   it "works as a Liquid template" do
@@ -14,7 +14,7 @@ RSpec.describe Jekyll::HtmlTruncatewords do
 
   context 'examples' do
     def check(input, words, expected)
-      output = Jekyll::HtmlTruncatewords.html_truncatewords(input, words)
+      output = JekyllHtmlTruncatewords.html_truncatewords(input, words)
       expect(output).to eq(expected)
     end
 

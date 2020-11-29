@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    jekyll-html-truncatewords (0.1.0)
+    jekyll_html_truncatewords (0.1.0)
       liquid
       liquid-c
       nokogiri
@@ -35,7 +35,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
-  jekyll-html-truncatewords!
+  jekyll_html_truncatewords!
   rake (~> 12.0)
   rspec (~> 3.0)
 

@@ -1,8 +1,8 @@
-require_relative 'lib/jekyll-html-truncatewords/version'
+require_relative 'lib/jekyll_html_truncatewords/version'
 
 Gem::Specification.new do |spec|
-  spec.name          = "jekyll-html-truncatewords"
-  spec.version       = Jekyll::HtmlTruncatewords::VERSION
+  spec.name          = "jekyll_html_truncatewords"
+  spec.version       = JekyllHtmlTruncatewords::VERSION
   spec.authors       = ["Mike Kasberg"]
   spec.email         = ["mike@mikekasberg.com"]
 
