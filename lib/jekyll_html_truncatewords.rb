@@ -3,11 +3,13 @@ require 'liquid'
 require 'nokogiri'
 
 module JekyllHtmlTruncatewords
+  # Extending Liquid::StandardFilters allows us to call the Liquid version of truncatewords
+  # instead of re-creating our own.
   extend Liquid::StandardFilters
 
   extend self
 
-  # Truncate HTML input to have `limit` words when rendered as HTML.
+  # Truncate HTML input to have `words` words when rendered as HTML.
   # Preserve HTML structure so tags are correctly matched.
   def html_truncatewords(input, words = 15, truncate_string = "...")
     words = words.to_i
@@ -17,19 +19,12 @@ module JekyllHtmlTruncatewords
       return input
     end
 
-    remaining = words
-    fragment.children.each do |n|
-      if remaining > 0
-        remaining = truncate_node(n, remaining, truncate_string)
-      else
-        n.remove
-      end
-    end
+    truncate_node(fragment, words, truncate_string)
 
     fragment.to_html
   end
 
-  # Truncate the node if necessary.
+  # A recursive function to truncate the node, if necessary.
   # Return the words remaining after accounting for the current node.
   private def truncate_node(node, words_remaining, truncate_string)
     if node.text?

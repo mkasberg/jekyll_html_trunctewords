@@ -6,16 +6,16 @@ Gem::Specification.new do |spec|
   spec.authors       = ["Mike Kasberg"]
   spec.email         = ["mike@mikekasberg.com"]
 
-  spec.summary       = %q{Write a short summary, because RubyGems requires one.} #TODO
-  spec.description   = %q{Write a longer description or delete this line.} # TODO
-  spec.homepage      = "https://www.mikekasberg.com" # TODO
+  spec.summary       = %q{A Jekyll filter to truncate HTML}
+  spec.description   = %q{The Liquid truncatewords filter can't operate on HTML because it isn't aware of tags. But Jekyll blog posts usually contain HTML, so this makes it difficult to, for example, use the first 50 words of a blog post as the preview. jekyll_html_truncatewords solves that problem. It works the same as truncatewords, but it is aware of HTML tags so it counts words correctly within HTML and won't break HTML.}
+  spec.homepage      = "https://github.com/mkasberg/jekyll_html_trunctewords"
   spec.license       = "MIT"
-  spec.required_ruby_version = Gem::Requirement.new(">= 2.3.0")
+  spec.required_ruby_version = Gem::Requirement.new(">= 2.4.0")
 
   spec.metadata["allowed_push_host"] = "TODO: Set to 'http://mygemserver.com'"
 
   spec.metadata["homepage_uri"] = spec.homepage
-  spec.metadata["source_code_uri"] = "https://www.mikekasberg.com" # TODO
+  spec.metadata["source_code_uri"] = "https://github.com/mkasberg/jekyll_html_trunctewords"
   spec.metadata["changelog_uri"] = "https://www.mikekasberg.com" # TODO
 
   # Specify which files should be added to the gem when it is released.

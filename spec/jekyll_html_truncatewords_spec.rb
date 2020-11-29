@@ -55,10 +55,27 @@ RSpec.describe JekyllHtmlTruncatewords do
       check(input, 1, expected)
     end
 
-    it "puts the elllipsis in the right spot with child tags" do
+    it "truncates child tags correctly" do
       input = '<div>This <b>is</b> a longer sentence.</div>'
       expected = '<div>This <b>is</b> a...</div>'
       check(input, 3, expected)
+    end
+
+    it "truncates child tags and following nodes in parent tags" do
+      input = '<p>This is a <i>really <b>nested</b></i> sentence structure.</p>'
+      expected = '<p>This is a <i>really <b>nested...</b></i></p>'
+      check(input, 5, expected)
+    end
+
+    it "Doesn't count images as words" do
+      input = '<img src="https://jekyllrb.com/img/logo-2x.png"> The Jekyll logo!'
+      check(input, 3, input)
+    end
+
+    it "Truncates text after an image" do
+      input = '<img src="https://jekyllrb.com/img/logo-2x.png"> The Jekyll logo!'
+      expected = '<img src="https://jekyllrb.com/img/logo-2x.png"> The Jekyll...'
+      check(input, 2, expected)
     end
   end
 end
