@@ -27,7 +27,7 @@ module Jekyll
         end
       end
 
-      fragment.to_s
+      fragment.to_html
     end
 
     # Truncate the node if necessary.
@@ -41,7 +41,7 @@ module Jekyll
           node.content = node.content.rstrip + truncate_string
           return 0
         else
-          node.content = truncatewords(node.text, words_remaining, truncate_string)
+          node.content = truncate_text(node.text, words_remaining, truncate_string)
           return 0
         end
       else
@@ -55,6 +55,13 @@ module Jekyll
         
         return words_remaining
       end
+    end
+
+    private def truncate_text(input, words, truncate_string)
+      leading_spaces = input.match(/^[ ]+/)
+      lead = leading_spaces.nil? ? '' : leading_spaces[0]
+      
+      lead + truncatewords(input, words, truncate_string)
     end
   end
 end

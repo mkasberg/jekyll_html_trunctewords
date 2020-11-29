@@ -54,5 +54,11 @@ RSpec.describe Jekyll::HtmlTruncatewords do
       expected = '<div>foo...</div>'
       check(input, 1, expected)
     end
+
+    it "puts the elllipsis in the right spot with child tags" do
+      input = '<div>This <b>is</b> a longer sentence.</div>'
+      expected = '<div>This <b>is</b> a...</div>'
+      check(input, 3, expected)
+    end
   end
 end
