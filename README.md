@@ -6,19 +6,17 @@ A Jekyll filter to truncate HTML to a specified number of words. The Liquid trun
 
 ## Installation
 
-Add this line to your application's Gemfile:
+This is a Jekyll plugin, and can be installed using any of the [supported
+methods](https://jekyllrb.com/docs/plugins/installation/).
+
+We recommend simply adding the gem to the `:jekyll_plugins` group in your
+`Gemfile`:
 
 ```ruby
-gem 'jekyll_html_truncatewords'
+group :jekyll_plugins do
+  gem 'jekyll_html_truncatewords', '~> 0.1'
+end
 ```
-
-And then execute:
-
-    $ bundle install
-
-Or install it yourself as:
-
-    $ gem install jekyll_html_truncatewords
 
 ## Usage
 
