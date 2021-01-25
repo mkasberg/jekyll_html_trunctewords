@@ -1,5 +1,7 @@
 # JekyllHtmlTruncatewords
 
+**[Published on RubyGems](https://rubygems.org/gems/jekyll_html_truncatewords)**
+
 A Jekyll filter to truncate HTML to a specified number of words. The Liquid `truncatewords` filter can't operate accurately on HTML because it isn't aware of tags. But Jekyll blog posts usually contain HTML, so this makes it difficult to, for example, use the first 50 words of a blog post as the preview. jekyll_html_truncatewords solves that problem. It works the same as `truncatewords`, but it is aware of HTML tags so it counts words correctly within HTML and won't break HTML.
 
 ### Is this ready for production?
