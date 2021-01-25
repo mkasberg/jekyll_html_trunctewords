@@ -1,8 +1,10 @@
 # JekyllHtmlTruncatewords
 
-**WIP:** This gem is not ready for production use yet.`
+A Jekyll filter to truncate HTML to a specified number of words. The Liquid `truncatewords` filter can't operate accurately on HTML because it isn't aware of tags. But Jekyll blog posts usually contain HTML, so this makes it difficult to, for example, use the first 50 words of a blog post as the preview. jekyll_html_truncatewords solves that problem. It works the same as `truncatewords`, but it is aware of HTML tags so it counts words correctly within HTML and won't break HTML.
 
-A Jekyll filter to truncate HTML to a specified number of words. The Liquid truncatewords filter can't operate on HTML because it isn't aware of tags. But Jekyll blog posts usually contain HTML, so this makes it difficult to, for example, use the first 50 words of a blog post as the preview. jekyll_html_truncatewords solves that problem. It works the same as truncatewords, but it is aware of HTML tags so it counts words correctly within HTML and won't break HTML.
+### Is this ready for production?
+
+I'm using this in production on some small sites. I'm confident that it handles almost everything correctly, but it might be the case that unusual HTML produces some strange results. If you encounter any incorrect behavior, please open an issue here on GitHub and I'll try to implement a fix. Pull requests are also welcome, of course.
 
 ## Installation
 
@@ -24,7 +26,7 @@ end
 {{ post.content | html_truncatewords: 50 }}
 ```
 
-## Development
+## Development Notes
 
 After checking out the repo, run `bin/setup` to install dependencies. Then, run `rake spec` to run the tests. You can also run `bin/console` for an interactive prompt that will allow you to experiment.
 
@@ -32,9 +34,7 @@ To install this gem onto your local machine, run `bundle exec rake install`. To 
 
 ## Contributing
 
-Bug reports and pull requests are welcome on GitHub at
-https://github.com/mkasberg/jekyll_html_truncatewords.
-
+Bug reports and pull requests are welcome on GitHub at https://github.com/mkasberg/jekyll_html_truncatewords.
 
 ## License
 
